@@ -9,8 +9,8 @@
         </div>
         <p>You are searching for {{ searchTerm }}</p>
     </form>
-    <div class="row">
-    <ul class="col">
+    
+    <ul class="news__list">
         <li v-for="article in articles" class ="news__item">
             <div class="card" style="width: 18rem;">
                 <img v-bind:src="article.urlToImage" class="card-img-top" alt="news Image">
@@ -23,7 +23,6 @@
         </li>
             
     </ul>
-    </div>
 </template>
 
 <script>
@@ -71,3 +70,14 @@ export default {
     }
 };
 </script>
+
+<style>
+    .news__list{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    ul{
+        list-style-type: none;
+    }
+</style>
