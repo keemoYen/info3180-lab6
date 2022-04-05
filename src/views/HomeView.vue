@@ -1,14 +1,12 @@
 <script>
 
-import NewsList  from '@/components/NewsList.vue'
 
 export default {
     data() {
         return {
-            message: "My name is Keemo , And I Believe in myself"
+            message: "Nothing tried, Nothing Done"
         };
-    },
-    components: { NewsList }
+    }
 }
 </script>
 
@@ -17,9 +15,6 @@ export default {
       <div class="text-center">
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
         <h1>{{ message }}</h1>
-        <NewsList>
-            {{components}}
-      </NewsList>
       </div>
     </div>
 </template>
