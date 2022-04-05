@@ -9,8 +9,8 @@
         </div>
         <p>You are searching for {{ searchTerm }}</p>
     </form>
-
-    <ul class="news__list">
+    <div class="row">
+    <ul class="col">
         <li v-for="article in articles" class ="news__item">
             <div class="card" style="width: 18rem;">
                 <img v-bind:src="article.urlToImage" class="card-img-top" alt="news Image">
@@ -23,6 +23,7 @@
         </li>
             
     </ul>
+    </div>
 </template>
 
 <script>
