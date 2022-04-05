@@ -1,5 +1,5 @@
 <template>
-    <form class="d-flex flex-column justify-content-center">
+    <form @submit.prevent="searchNews" class="d-flex flex-column justify-content-center">
         <div class="input-group mx-sm-3 mb-2">
             <label class="visually-hidden" for="search">Search</label>
             <input type ="search" name="search" v-model ="searchTerm"
@@ -31,8 +31,26 @@ export default {
        return{
            articles: [],
            searchTerm: ''
-       }; 
+       }
     },
+    methods:{
+        searchNews(){
+            let self = this;
+
+            fetch('https://newsapi.org/v2/everything?q='+self.searchTerm+'&language=en',{
+                headers:{
+                    'Authorization': 'Bearer 2796a2c49d354b9e9dde6e5e7bdf6f44'
+                }
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data){
+                console.log(data);
+                self.articles = data.articles;
+            });
+        }
+    },    
     created(){
         let self = this;
 
